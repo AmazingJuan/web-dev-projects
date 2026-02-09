@@ -1,4 +1,9 @@
 export class Book {
+    // id - number - Unique identifier for the book
+    // title - string - Title of the book
+    // category - string - Category of the book
+    // price - number - Price of the book
+    // stock - number - Available amount in inventory
     constructor(
         public id: number,
         public title: string,
