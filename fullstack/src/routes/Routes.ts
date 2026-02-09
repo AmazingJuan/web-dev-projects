@@ -1,15 +1,14 @@
-import { Router } from "express";
-import { HomeController } from "../controllers/HomeController.js";
+import { Router } from 'express';
+import { BookRouter } from './books/BookRouter.js';
+import { HomeRouter } from './home/HomeRouter.js';
 
 export default class Routes {
-  static initializeRoutes(): Router {
-    const router = Router();
+    static initializeRoutes(): Router {
+        const router = Router();
 
-    router.get("/", HomeController.index);
-    router.get("/about", HomeController.about);
-    router.get("/contact", HomeController.contact);
-    router.get("/main-point", HomeController.Main_Point);
-    router.get("/books/:id", HomeController.show);
-    return router;
-  }
+        router.use('', HomeRouter.getRouter());
+        router.use('/books', BookRouter.getRouter());
+
+        return router;
+    }
 }
