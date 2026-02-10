@@ -1,19 +1,15 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <template>
   <div class="bg-gray-100 min-h-screen">
     <div class="flex h-screen overflow-hidden">
       <!-- Sidebar -->
-      <aside
-        class="fixed flex h-full w-64 flex-col bg-gray-800 text-white shadow-lg"
-      >
+      <aside class="fixed flex h-full w-64 flex-col bg-gray-800 text-white shadow-lg">
         <div class="flex-1 p-6">
           <div class="mb-8 flex items-center">
-            <i
-              class="fas fa-graduation-cap mr-3 text-2xl text-blue-400"
-            ></i>
+            <i class="fas fa-graduation-cap mr-3 text-2xl text-blue-400"></i>
             <span class="text-xl font-bold">Library Dashboard</span>
           </div>
 
@@ -37,40 +33,26 @@ import { RouterLink, RouterView } from 'vue-router'
         </div>
 
         <!-- Sidebar footer -->
-        <div
-          class="mt-auto w-full border-t border-gray-700 p-6"
-        >
+        <div class="mt-auto w-full border-t border-gray-700 p-6">
           <div class="flex items-center">
-            <div
-              class="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-blue-500"
-            >
+            <div class="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-blue-500">
               <i class="fas fa-user text-white"></i>
             </div>
 
             <div>
               <p class="text-sm font-semibold">Admin User</p>
-              <p class="text-xs text-gray-400">
-                admin@example.com
-              </p>
+              <p class="text-xs text-gray-400">admin@example.com</p>
             </div>
           </div>
         </div>
       </aside>
 
       <!-- Main content area -->
-      <div
-        class="ml-64 flex flex-1 flex-col overflow-hidden"
-      >
+      <div class="ml-64 flex flex-1 flex-col overflow-hidden">
         <!-- Top header -->
-        <header
-          class="border-b border-gray-200 bg-white shadow-sm"
-        >
-          <div
-            class="flex items-center justify-between px-6 py-4"
-          >
-            <h1
-              class="text-2xl font-bold text-gray-800"
-            >
+        <header class="border-b border-gray-200 bg-white shadow-sm">
+          <div class="flex items-center justify-between px-6 py-4">
+            <h1 class="text-2xl font-bold text-gray-800">
               {{ $route.meta.title }}
             </h1>
 
