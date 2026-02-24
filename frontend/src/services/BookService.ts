@@ -1,4 +1,3 @@
-
 import type { BookInterface } from '@/interfaces/BookInterface';
 import { useBookStore } from '@/stores/bookstore.js';
 import type { CreateBookDTO } from '@/dtos/CreateBookDTO.js';
@@ -20,5 +19,4 @@ export class BookService {
   static deleteLastBook(): void {
     useBookStore().books.pop();
   }
-
 }

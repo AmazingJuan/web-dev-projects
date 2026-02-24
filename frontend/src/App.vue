@@ -36,7 +36,6 @@ import { RouterLink, RouterView } from 'vue-router';
               <i class="fas fa-book mr-3"></i>
               <span>Books</span>
             </RouterLink>
-
           </nav>
         </div>
 
