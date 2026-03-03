@@ -1,11 +1,12 @@
+// Third party
 import { createRouter, createWebHistory } from 'vue-router';
 
-import HomeView from '@/views/HomeView.vue';
+// Own
 import AboutView from '@/views/AboutView.vue';
+import BooksCreateView from '@/views/BooksCreateView.vue';
 import BooksIndexView from '@/views/BooksIndexView.vue';
 import BooksShowView from '@/views/BooksShowView.vue';
-import BooksCreateView from '@/views/BooksCreateView.vue';
-import BooksDeleteLastView from '@/views/BooksDeleteLastView.vue';
+import HomeView from '@/views/HomeView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,11 +29,6 @@ const router = createRouter({
       name: 'books.create',
       component: BooksCreateView,
       meta: { title: 'Create Book' },
-    },
-    {
-      path: '/books/delete-last',
-      name: 'books.delete-last',
-      component: BooksDeleteLastView,
     },
     { path: '/books/:id', name: 'book', component: BooksShowView, meta: { title: 'Book' } },
   ],

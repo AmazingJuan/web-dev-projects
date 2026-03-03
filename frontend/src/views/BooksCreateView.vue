@@ -1,8 +1,12 @@
 <script setup lang="ts">
+// Third party
 import { ref } from 'vue';
-import { BookService } from '@/services/BookService';
-import type { CreateBookDTO } from '@/dtos/CreateBookDTO.js';
 
+// Own
+import type { CreateBookDTO } from '@/dtos/CreateBookDTO.js';
+import { BookService } from '@/services/BookService';
+
+// reactive
 const title = ref('');
 const category = ref('');
 const price = ref(0);

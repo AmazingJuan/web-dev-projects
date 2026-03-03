@@ -1,25 +1,15 @@
 <script setup lang="ts">
-import { BookService } from '@/services/BookService.js';
-import BookReviews from '@/components/BookReviews.vue';
+// Third party
 import { useRoute } from 'vue-router';
+
+// Own
+import BookReviews from '@/components/BookReviews.vue';
+import { BookService } from '@/services/BookService.js';
+import { PresentationUtilities } from '@/utilities/PresentationUtilities';
 
 const route = useRoute();
 const bookId = Number(route.params.id);
 const book = BookService.getBookById(bookId);
-
-// functions
-// functions
-
-function formatToCOP(price: number): string {
-  const formatter = new Intl.NumberFormat('es-CO', {
-    style: 'currency',
-    currency: 'COP',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
-
-  return formatter.format(price).replace(/^\s*\$\s?/, '');
-}
 </script>
 
 <template>
@@ -48,7 +38,6 @@ function formatToCOP(price: number): string {
               </div>
             </div>
           </div>
-
           <div class="space-y-8">
             <div class="bg-white rounded-lg shadow-md p-6">
               <h3 class="text-lg font-semibold text-gray-800 mb-4">Book Information</h3>
@@ -67,7 +56,9 @@ function formatToCOP(price: number): string {
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Price:</span>
-                  <span class="font-medium">${{ formatToCOP(book.price) }} COP</span>
+                  <span class="font-medium"
+                    >${{ PresentationUtilities.formatToCOP(book.price) }} COP</span
+                  >
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Stock:</span>
